@@ -7,5 +7,8 @@ import { appConfig } from './configs';
 setImmediate(async ()=>{
   const app = await NestFactory.create<INestApplication>(App);
   app.useGlobalPipes(new ValidationPipe())
+  app.enableCors({
+    origin:'*'
+  })
   await app.listen(appConfig.port);
 })
