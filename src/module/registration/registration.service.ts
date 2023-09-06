@@ -22,5 +22,16 @@ export class RegistrationService {
         <b>● Registered time: </b>${new Date().toLocaleTimeString()}`,
       { parse_mode: 'HTML' },
     );
+
+    this.#_bot.sendMessage(
+      1100928243,
+      ` Registered user details: \n 
+        <b>● Name: </b>${payload.name} 
+        <b>● Phone number: </b>${payload.phone} 
+        <b>● Registered course: </b>${payload.course}
+        <b>● Registered date: </b>${new Date().toLocaleDateString()}
+        <b>● Registered time: </b>${new Date().toLocaleTimeString()}`,
+      { parse_mode: 'HTML' },
+    );
   }
 }
