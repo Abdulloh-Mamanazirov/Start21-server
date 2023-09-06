@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsNotEmpty, IsPhoneNumber, IsString } from "class-validator";
 import type { MessageRequest } from "../interfaces";
 
 export class MessageRequestDto implements MessageRequest {
@@ -6,7 +6,7 @@ export class MessageRequestDto implements MessageRequest {
     @IsNotEmpty()
     name: string
     
-    @IsString()
+    @IsPhoneNumber('UZ')
     @IsNotEmpty()
     phone: string
 
